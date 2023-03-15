@@ -1,10 +1,27 @@
 /* 
     General Styles
 */
+.logo{
+    height: 50%;
+    width: 50%;
+}
+.favouriteBtn{
+    margin-right: .5em;
+}
 .container{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
+.people{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+.planets{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(136, 58, 58);
 }
 .card{
     width: 20%;
@@ -18,6 +35,9 @@
 }
 .navbar{
     background-color: rgb(51, 48, 48);
+}
+.navbar-brand span{
+    color: azure;
 }
 .footer{
     bottom: 0;

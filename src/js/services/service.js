@@ -6,9 +6,14 @@ export async function getPeople() {
     return dataResponse;
 }
 
-export async function getInfoPeople(){
-    const response = await fetch(BASE_URL+"/people/1", {method:"GET"})
+export async function getInfoPeople(id){
+    const response = await fetch(BASE_URL+"/people/"+id, {method:"GET"})
+    const dataResponse = await response.json();
+    return dataResponse;   
+}
+
+export async function getPlanets(){
+    const response = await fetch(BASE_URL+"/planets", {method:"GET"})
     const dataResponse = await response.json();
     return dataResponse;
 }
-
