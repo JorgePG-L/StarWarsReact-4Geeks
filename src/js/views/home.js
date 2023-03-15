@@ -38,8 +38,9 @@ export const Home = () => {
 
 
 	return(
-		<div className="container mt-5">
+		<div className="container-fluid">
 			<div className="row people">
+				<h2 className="titleCharacters">Star Wars Characters</h2>
 			{
 				people.map((element, key) => 
 				<div className="card" key={key}>
@@ -54,6 +55,7 @@ export const Home = () => {
 			}
 			</div>
 			<div className="row planets">
+			<h2 className="titleCharacters">Star Wars Planets</h2>
 				{
 					planets.map((element, key) => 
 						<div className="card" key={key}>

@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../img/starwarsLogo.jpg"
+
+
 export const Navbar = () => {
 	return (
 		<nav className="navbar navbar-light mb-3">

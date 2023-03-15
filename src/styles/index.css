@@ -8,23 +8,33 @@
 .favouriteBtn{
     margin-right: .5em;
 }
-.container{
+.container-fluid{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    margin:0;
+}
+.titleCharacters{
+    display: flex;
+    justify-content: center;
+    color: white;
 }
 .people{
+    width: 100%;
     display: flex;
+    flex-direction: row;
     justify-content: center;
     background-color: black;
 }
 .planets{
+    width: 100%;
     display: flex;
+    flex-direction: row;
     justify-content: center;
     background-color: rgb(136, 58, 58);
 }
 .card{
-    width: 20%;
+    width: 30%;
     margin: .5em;
     background-color: #ccc;
 }
