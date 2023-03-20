@@ -6,8 +6,6 @@ import soldados from "../../img/soldadosImperio.jpg"
 import darthVader from "../../img/darthVader.jpg"
 import tatooine from "../../img/tatooine.jpg"
 import planetUrb from "../../img/urbanPlanet.jpg"
-import { element } from "prop-types";
-
 
 export const Home = () => {
 
@@ -16,13 +14,7 @@ export const Home = () => {
 
 	const [planets, setPlanets] = useState([]);
 	const [vehicle, setVehicle] = useState([]); 
-	const [image, setImage] = useState();
-
-	async function getImgFromService(){
-		const dataFromFetch = await getImgCharacter()
-		console.log(typeof dataFromFetch)
-		setImage(dataFromFetch.url)
-	}
+	const [image, setImage] = useState([]);
 
 	async function getDataFromFunction(){
 		const dataFromFetch = await getPeople()
@@ -44,13 +36,18 @@ export const Home = () => {
 		setVehicle(dataFromFetch.results);
 	}
 
+	async function getImgFromService(key){
+		const dataFromFetch = await getImgCharacter(key);
+		console.log("HOLA!!!   " + dataFromFetch.url)
+		setImage([...image, dataFromFetch.url])
+		console.log(image)
+	}
 
 	useEffect(() => {
 		getDataFromFunction()
 		getSingleData()
 		getPlanetsFromService()
 		getVehiclesFromService()
-		getImgFromService()
 	},[])
 
 
@@ -61,7 +58,7 @@ export const Home = () => {
 					{
 						people.map((element, key) => 
 						<div className="card" key={key}>
-						<img className="card-img-top" src={key % 2 != 0 ? soldados : darthVader} alt="Card image"></img>
+						<img className="card-img-top" src={`https://starwars-visualguide.com/assets/img/characters/`+(key+1)+".jpg"} alt="Card image"></img>
 						<h5 className="card-title">{element.name}</h5>
 						<p className="card-text">{state2}</p>
 						<div className="card-footer">
@@ -78,7 +75,7 @@ export const Home = () => {
 					{
 						planets.map((element, key) => 
 							<div className="card" key={key}>
-								<img className="card-img-top" src={key % 2 != 0 ? tatooine : planetUrb} alt="Card image"></img>
+								<img className="card-img-top" src={`https://starwars-visualguide.com/assets/img/planets/`+(key+1)+".jpg"} alt="Card image"></img>
 								<h5 className="card-title">{element.name}</h5>
 								<p className="card-text">{state2}</p>
 								<div className="card-footer">
@@ -95,7 +92,7 @@ export const Home = () => {
 					{
 						vehicle.map((element, key) => 
 							<div className="card" key={key}>
-								<img className="card-img-top" src={image} alt="Card image"></img>
+								<img className="card-img-top" src={`https://starwars-visualguide.com/assets/img/vehicles/`+(key+1)+".jpg"} alt="Card image"></img>
 								<h5 className="card-title">{element.name}</h5>
 								<p className="card-text">{state2}</p>
 								<div className="card-footer">

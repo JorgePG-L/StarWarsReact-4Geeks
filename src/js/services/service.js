@@ -1,11 +1,10 @@
 const BASE_URL = "https://www.swapi.tech/api"
 
-const IMG_URL = `https://starwars-visualguide.com/assets/img/characters/1.jpg`
+const IMG_URL = `https://starwars-visualguide.com/assets/img/characters/`
 
-export async function getImgCharacter(){
-    const response = await fetch(IMG_URL);
+export async function getImgCharacter(id){
+    const response = await fetch(IMG_URL+id+".jpg");
     const dataResponse = await response;
-    console.log(dataResponse)
     return dataResponse;
 }
 
