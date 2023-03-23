@@ -9,9 +9,15 @@ export const Navbar = () => {
 				<img className="logo" src={logo}></img>
 			</Link>
 			<div className="ml-auto">
-				<Link to="/demo">
-					<button className="btn btn-warning favouriteBtn">Favourite Card</button>
-				</Link>
+				<ul className="navbar-nav">
+					<li className="nav-item dropdown dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+						Favourite Cart  
+						<span className="itemOnCart">0</span>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<li>Action</li>
+						</ul>
+					</li>
+				</ul>
 			</div>
 		</nav>
 	);

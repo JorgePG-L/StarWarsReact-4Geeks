@@ -8,6 +8,11 @@ import "../styles/index.css";
 //import your own components
 import Layout from './layout.js'
 
+// Bootstrap CSS
+import "bootstrap/dist/css/bootstrap.min.css";
+// Bootstrap Bundle JS
+import "bootstrap/dist/js/bootstrap.bundle.min";
+
 //
 const root = createRoot(document.querySelector("#app"))
 
