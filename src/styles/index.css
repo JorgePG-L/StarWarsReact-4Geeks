@@ -7,6 +7,11 @@
     margin-right: 3em;
     padding: .5em;
 }
+
+.dropdown-menu > li {
+    color: rgb(255, 166, 0);
+}
+
 .itemOnCart{
     margin-left: .3em;
 }

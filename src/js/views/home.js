@@ -1,8 +1,11 @@
-import React,{useState, useEffect} from "react";
+import React,{useState, useEffect, useContext} from "react";
 import {getPeople, getInfoPeople, getPlanets, getVehicles, getImgCharacter} from "../services/service.js";
+import { Context } from "../store/appContext.js";
 import "../../styles/home.css";
 
+
 export const Home = () => {
+	const {store, actions} = useContext(Context)
 
 	const [people, setPeople] = useState([])
 	const [state2, setState2] = useState("");
@@ -56,8 +59,8 @@ export const Home = () => {
 						<img className="card-img-top" src={`https://starwars-visualguide.com/assets/img/characters/`+(key+1)+".jpg"} alt="Card image"></img>
 						<h5 className="card-title">{element.name}</h5>
 						<p className="card-text">{state2}</p>
-						<button className="btn btn-success">More Info</button>							
-						<button className="btn btn-warning">Add to Chart</button>		
+						<button className="btn btn-success" onClick={() => actions.getFromCart()}>More Info</button>							
+						<button className="btn btn-warning" onClick={() => actions.addToCart(element.name)}>Add to Chart</button>		
 						</div>)
 					}				
 				</div>

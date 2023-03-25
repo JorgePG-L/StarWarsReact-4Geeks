@@ -13,7 +13,7 @@ export const Navbar = () => {
 					<li className="nav-item dropdown dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
 						Favourite Cart  
 						<span className="itemOnCart">0</span>
-						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<ul className="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
 							<li>Action</li>
 						</ul>
 					</li>
