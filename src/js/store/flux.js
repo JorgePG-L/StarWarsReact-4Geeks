@@ -11,7 +11,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			getFromCart : () => {
 				const store = getStore(); 
-				console.log(store)
+				return store.cartas.length
 			}
 		}
 	};

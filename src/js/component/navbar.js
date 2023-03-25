@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../img/starwarsLogo.jpg"
+import { Context } from "../store/appContext";
 
 export const Navbar = () => {
+
+	const {store, actions} = useContext(Context)
+	
 	return (
 		<nav className="navbar mb-3">
 			<Link to="/">
@@ -12,9 +16,15 @@ export const Navbar = () => {
 				<ul className="navbar-nav">
 					<li className="nav-item dropdown dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
 						Favourite Cart  
-						<span className="itemOnCart">0</span>
+						<span className="itemOnCart">{actions.getFromCart()}</span>
 						<ul className="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-							<li>Action</li>
+							{
+								store.cartas.map((element, index) => {
+									return(
+										<li>{element}</li>
+									)
+								})
+							}
 						</ul>
 					</li>
 				</ul>

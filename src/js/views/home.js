@@ -72,8 +72,8 @@ export const Home = () => {
 								<img className="card-img-top" src={`https://starwars-visualguide.com/assets/img/planets/`+(key+1)+".jpg"} alt="Card image"></img>
 								<h5 className="card-title">{element.name}</h5>
 								<p className="card-text">{state2}</p>						
-									<button className="btn btn-success">More Info</button>																
-									<button className="btn btn-warning">Add to Chart</button>	
+									<button className="btn btn-success" onClick={() => actions.getFromCart()}>More Info</button>																
+									<button className="btn btn-warning" onClick={() => actions.addToCart(element.name)}>Add to Chart</button>	
 							</div>)
 					}
 				</div>	
@@ -85,8 +85,8 @@ export const Home = () => {
 								<img className="card-img-top" src={`https://starwars-visualguide.com/assets/img/vehicles/`+(key+1)+".jpg"} alt="Card image"></img>
 								<h5 className="card-title">{element.name}</h5>
 								<p className="card-text">{state2}</p>
-									<button className="btn btn-success">More Info</button>
-									<button className="btn btn-warning">Add to Chart</button>			
+									<button className="btn btn-success" onClick={() => actions.getFromCart()}>More Info</button>
+									<button className="btn btn-warning" onClick={() => actions.addToCart(element.name)}>Add to Chart</button>			
 							</div>
 						)
 					}
